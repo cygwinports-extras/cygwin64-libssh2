@@ -1,0 +1,21 @@
+CROSS_HOST="x86_64-pc-cygwin"
+inherit cross
+
+NAME="cygwin64-libssh2"
+VERSION=1.4.2
+RELEASE=1
+CATEGORY="Devel"
+SUMMARY="SSH2 protocol library for Cygwin 64bit toolchain"
+DESCRIPTION="libssh2 is a library implementing the SSH2 protocol as defined
+by Internet Drafts: SECSH-TRANS, SECSH-USERAUTH, SECSH-CONNECTION, SECSH-ARCH,
+SECSH-FILEXFER, SECSH-DHGEX, SECSH-NUMBERS, and SECSH-PUBLICKEY."
+HOMEPAGE="http://www.libssh2.org/"
+SRC_URI="http://www.libssh2.org/download/libssh2-${VERSION}.tar.gz"
+SRC_DIR="libssh2-${VERSION}"
+PATCH_URI="1.2.7-cygwin.patch"
+
+DIFF_EXCLUDES="libssh2_config.h"
+
+MAKEOPTS+=" dist_man_MANS= "
+
+KEEP_LA_FILES="none"
